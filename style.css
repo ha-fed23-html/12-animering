@@ -3,6 +3,9 @@
 	--primary-color: rgb(37, 25, 80);
 }
 
+* {
+	box-sizing: border-box;
+}
 header {
 	background-color: rgb(176, 219, 242);
 	padding: 1.5em;
@@ -25,6 +28,7 @@ header > a {
 header > a:hover {
 	box-shadow: 0.3em 0.45em 0.6em -0.1em rgb(80, 80, 80);
 	top: -0.3em;
+	background-color: rgb(124, 162, 223);
 }
 
 
@@ -45,4 +49,48 @@ body {
 .highlight:hover {
 	background-color: #b9a35a;
 	border-color: rgb(198, 180, 158);
+}
+
+
+.race-track {
+	border: 2px solid black;
+	padding: 0.2em;
+	margin-top: 1em;
+	background-color: rgb(203, 203, 240);
+
+}
+
+.race-track > * {
+	width: 5em;
+	height: 2em;
+	border: 1px solid black;
+	margin: 0.1em;
+	background-color: rgb(133, 133, 233);
+	position: relative;
+	left: 0%;
+}
+.race-track .linear {
+	transition: all 2s linear;
+}
+.race-track .ease-in {
+	transition: all 2s ease-in;
+}
+.race-track .ease-out {
+	transition: all 2s ease-out;
+}
+.race-track .ease-in-out {
+	transition: all 2s ease-in-out;
+}
+
+.race-track:hover > * {
+	left: calc(100% - 5em);
+}
+
+.shy-button {
+	margin-top: 1em;
+	opacity: 1;
+	transition: opacity 1.5s ease-out;
+}
+.shy-button:hover {
+	opacity: 0.2;
 }
