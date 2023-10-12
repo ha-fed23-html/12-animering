@@ -1,6 +1,7 @@
 :root {
 	/* CSS-variabler här */
 	--primary-color: rgb(37, 25, 80);
+	--racecard-width: 5em;
 }
 
 * {
@@ -61,7 +62,7 @@ body {
 }
 
 .race-track > * {
-	width: 5em;
+	width: var(--racecard-width);
 	height: 2em;
 	border: 1px solid black;
 	margin: 0.1em;
@@ -83,7 +84,7 @@ body {
 }
 
 .race-track:hover > * {
-	left: calc(100% - 5em);
+	left: calc(100% - var(--racecard-width));
 }
 
 .shy-button {
@@ -93,4 +94,55 @@ body {
 }
 .shy-button:hover {
 	opacity: 0.2;
+}
+
+
+.keyframes-demo {
+	border: 2px solid gray;
+	height: 10em;
+	width: 10em;
+	margin-top: 1em;
+	border-radius: 0.2em;
+	padding: 0.3em;
+}
+.keyframes-demo .mover {
+	background-color: rgb(145, 203, 139);
+	--mover-width: 1.5em;
+	width: var(--mover-width);
+	height: 1.5em;
+	border-radius: 0.5em;
+	position: relative;
+}
+.keyframes-demo:hover .mover {
+	animation: move-around 2s ease-in-out;
+	/* Kom ihåg att beskriva positionen efter animationen är klar */
+	left: 0em;
+	top: 0em;
+}
+
+@keyframes move-around {
+	from {
+		left: 0em;
+		top: 0em;
+		animation-timing-function: ease-in;
+	}
+	25% {
+		left: calc(100% - var(--mover-width));
+		top: 0em;
+		animation-timing-function: linear;
+	}
+	50% {
+		left: calc(100% - var(--mover-width));
+		top: calc(100% - var(--mover-width));
+		animation-timing-function: linear;
+	}
+	75% {
+		left: 0em;
+		top: calc(100% - var(--mover-width));
+		animation-timing-function: ease-out;
+	}
+	to {
+		left: 0em;
+		top: 0em;
+	}
 }
