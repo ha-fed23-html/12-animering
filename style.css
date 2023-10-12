@@ -1,0 +1,30 @@
+:root {
+	/* CSS-variabler här */
+	--primary-color: rgb(37, 25, 80);
+}
+
+header {
+	background-color: rgb(176, 219, 242);
+	padding: 1.5em;
+}
+
+header > a {
+	padding: 0.7em 1.8em;
+	border: 1px solid black;
+	margin: 0.6em;
+	background-color: rgb(101, 148, 222);
+	color: var(--primary-color);
+
+	/* offset-x offset-y blur-radius spread-radius color */
+	box-shadow: 0.2em 0.3em 0.4em -0.1em rgb(80, 80, 80);
+}
+header > a:hover {
+	box-shadow: 0.3em 0.45em 0.6em -0.1em rgb(80, 80, 80);
+	position: relative;
+	top: -0.1em;
+}
+
+
+body {
+	color: var(--primary-color);
+}
